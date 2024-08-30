@@ -16,33 +16,54 @@ const setVideoSection = (id) => {
     frameborder: "0",
     allowfullscreen: true,
     width: "100%",
-    height: "315",
+    height: "500",
   });
   section.appendChild(player);
   return section;
 };
 
-const setReviewSection = (data, id) => {
+// const setReviewSection = (data, id) => {
+const setReviewSection = () => {
+  const inputBar = element("div", { class: "input-section" });
+  const input = element("input", {
+    class: "review-input",
+    type: "text",
+    placeholder: "리뷰를 남겨보세요!",
+  });
   const section = element("section", { class: "review-section" });
   const ul = element("ul", { class: "review-list" });
-  data.forEach((object) => {
-    if (object.id === id) {
-      object.reviews.forEach((review) => {
-        const li = element("li", { class: "review" }, review);
-        ul.appendChild(li);
-      });
-    }
-  });
-  section.appendChild(ul);
+
+  ul.appendChild(element("li", { class: "review" }, "와정말유익해요"));
+  ul.appendChild(element("li", { class: "review" }, "와정말유익해요"));
+  ul.appendChild(element("li", { class: "review" }, "와정말유익해요"));
+  ul.appendChild(element("li", { class: "review" }, "와정말유익해요"));
+  ul.appendChild(element("li", { class: "review" }, "와정말유익해요"));
+  // db에서 리뷰 정보를 동적으로 받아올 부분
+  // data.forEach((object) => {
+  // if (object.id === id) {
+  //   object.reviews.forEach((review) => {
+  //     const li = element("li", { class: "review" }, review);
+  //     ul.appendChild(li);
+  //   });
+  // }
+  // });
+
+  section.append(input, ul);
   return section;
 };
 
 const setPlayer = () => {
   // const response = await fetch("./playlist.json");
+  // const response = await fetch("./data/video.json");
   // const data = await response.json();
 
   const section = element("section", { class: "player-wrapper" });
-  section.append(setVideoSection(data.id), setReviewSection(data, id));
+  // section.append(setVideoSection(data.id), setReviewSection(data, id));
+  section.append(
+    setVideoSection("Kk7TQGqQ3nA"),
+    // setReviewSection(data, "Kk7TQGqQ3nA"),
+    setReviewSection(),
+  );
   document.getElementById("player").appendChild(section);
 };
 
