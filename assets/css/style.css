@@ -10,11 +10,3 @@ body {
 }
 
 
-header {
-    display: flex;
-    flex-flow:row-nowrap;
-
-}
-.container-fluid .navbar-nav {
-    margin-left: auto;
-}
