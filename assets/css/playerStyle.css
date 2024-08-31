@@ -1,11 +1,16 @@
-@import './reset.css';
+@import "./reset.css";
 
 :root {
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --button-disabled: #d2d2d2;
+    --secondary-text-color: gray;
+    --button-disabled: #f1f1f1;
     --button-enabled: #b5d3ff;
+    --content-bg: #f1f1f1;
 }
 .player-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
@@ -25,9 +30,45 @@
     width: 100%;
     height: 100%;
 }
+
+.video-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.infoDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.video-title {
+    font-size: 1.2rem;
+}
+
+.video-uploader {
+    color: var(--secondary-text-color);
+}
+
+.like {
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border: none;
+    background: none;
+    font-size: 1rem;
+}
 .review-section {
     display: flex;
-    padding: 1rem;
+    padding: 0 1rem;
     gap: 1rem;
 }
 
@@ -100,12 +141,12 @@
     padding: 0.3rem;
 }
 .comment-time {
-    color: gray;
+    color: var(--secondary-text-color);
 }
 .review-content {
     position: relative;
     padding: 0.8rem;
     margin-left: 2.2rem;
     border-radius: 0.5rem;
-    background-color: #f1f1f1;
+    background-color: var(--content-bg);
 }

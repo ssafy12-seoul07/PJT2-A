@@ -5,7 +5,8 @@
     "part": "전신",
     "channelName": "힘으뜸",
     "url": "https://www.youtube.com/watch?v=50WCSpZtdmA",
-    "thumbnail": "https://img.youtube.com/vi/50WCSpZtdmA/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/50WCSpZtdmA/maxresdefault.jpg",
+    "reviews": []
   },
   {
     "id": "Kk7TQGqQ3nA",
@@ -13,7 +14,8 @@
     "part": "전신",
     "channelName": "빵느",
     "url": "https://www.youtube.com/watch?v=Kk7TQGqQ3nA",
-    "thumbnail": "https://img.youtube.com/vi/Kk7TQGqQ3nA/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/Kk7TQGqQ3nA/maxresdefault.jpg",
+    "reviews": []
   },
   {
     "id": "MTU4iCDntjs",
@@ -21,7 +23,8 @@
     "part": "전신",
     "channelName": "Allblanc TV",
     "url": "https://www.youtube.com/watch?v=MTU4iCDntjs",
-    "thumbnail": "https://img.youtube.com/vi/MTU4iCDntjs/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/MTU4iCDntjs/maxresdefault.jpg",
+    "reviews": []
   },
 
   {
@@ -30,7 +33,8 @@
     "part": "상체",
     "channelName": "Mindful Yoga with Eileen",
     "url": "https://www.youtube.com/watch?v=D3yExRi7EME&t=791s",
-    "thumbnail": "https://img.youtube.com/vi/D3yExRi7EME&t=791s/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/D3yExRi7EME&t=791s/maxresdefault.jpg",
+    "reviews": []
   },
   {
     "id": "02K-k6daPb4",
@@ -38,7 +42,14 @@
     "part": "전신",
     "channelName": "빅씨스 Bigsis",
     "url": "https://www.youtube.com/watch?v=02K-k6daPb4",
-    "thumbnail": "https://img.youtube.com/vi/02K-k6daPb4/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/02K-k6daPb4/maxresdefault.jpg",
+    "reviews": [
+      {
+        "userName": "라면이조아요",
+        "commentTime": "2023-07-11",
+        "review": "유산소하지마세요체질이란게바뀝니다예를들어초식공룡과육식공룡이있는데육식공룡처럼힘쎄지고싶으면웨이트하고초식공룡처럼약해지고싶으면유산소하"
+      }
+    ]
   },
   {
     "id": "gMaB-fG4u4g",
@@ -46,7 +57,16 @@
     "part": "전신",
     "channelName": "ThankyouBUBU",
     "url": "https://www.youtube.com/embed/gMaB-fG4u4g",
-    "thumbnail": "https://img.youtube.com/vi/gMaB-fG4u4g/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/gMaB-fG4u4g/maxresdefault.jpg",
+    "reviews": [
+      { "userName": "맵찔이", "review": "이집 매운맛 잘하네" },
+      {
+        "userName": "test",
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+
+        "commentTime": "2018-12-24"
+      }
+    ]
   },
   {
     "id": "swRNeYw1JkY",
@@ -54,7 +74,14 @@
     "part": "전신",
     "channelName": "ThankyouBUBU",
     "url": "https://www.youtube.com/embed/swRNeYw1JkY",
-    "thumbnail": "https://img.youtube.com/vi/swRNeYw1JkY/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/swRNeYw1JkY/maxresdefault.jpg",
+    "reviews": [
+      {
+        "userName": "칼로리수집가",
+        "review": "뭐야 내 칼로리 돌려줘요",
+        "commentTime": "2024-08-01"
+      }
+    ]
   },
   {
     "id": "54tTYO-vU2E",
@@ -62,7 +89,8 @@
     "part": "상체",
     "channelName": "ThankyouBUBU",
     "url": "https://www.youtube.com/embed/54tTYO-vU2E",
-    "thumbnail": "https://img.youtube.com/vi/54tTYO-vU2E/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/54tTYO-vU2E/maxresdefault.jpg",
+    "reviews": []
   },
   {
     "id": "QqqZH3j_vH0",
@@ -70,7 +98,8 @@
     "part": "상체",
     "channelName": "ThankyouBUBU",
     "url": "https://www.youtube.com/embed/QqqZH3j_vH0",
-    "thumbnail": "https://img.youtube.com/vi/QqqZH3j_vH0/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/QqqZH3j_vH0/maxresdefault.jpg",
+    "reviews": []
   },
   {
     "id": "tzN6ypk6Sps",
@@ -78,7 +107,8 @@
     "part": "하체",
     "channelName": "김강민",
     "url": "https://www.youtube.com/embed/tzN6ypk6Sps",
-    "thumbnail": "https://img.youtube.com/vi/tzN6ypk6Sps/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/tzN6ypk6Sps/maxresdefault.jpg",
+    "reviews": []
   },
   {
     "id": "u5OgcZdNbMo",
@@ -86,7 +116,8 @@
     "part": "하체",
     "channelName": "GYM종국",
     "url": "https://www.youtube.com/embed/u5OgcZdNbMo",
-    "thumbnail": "https://img.youtube.com/vi/u5OgcZdNbMo/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/u5OgcZdNbMo/maxresdefault.jpg",
+    "reviews": []
   },
   {
     "id": "PjGcOP-TQPE",
@@ -94,7 +125,8 @@
     "part": "복부",
     "channelName": "ThankyouBUBU",
     "url": "https://www.youtube.com/embed/PjGcOP-TQPE",
-    "thumbnail": "https://img.youtube.com/vi/PjGcOP-TQPE/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/PjGcOP-TQPE/maxresdefault.jpg",
+    "reviews": []
   },
   {
     "id": "7TLk7pscICk",
@@ -102,6 +134,7 @@
     "part": "복부",
     "channelName": "SomiFit",
     "url": "https://www.youtube.com/embed/7TLk7pscICk",
-    "thumbnail": "https://img.youtube.com/vi/7TLk7pscICk/maxresdefault.jpg"
+    "thumbnail": "https://img.youtube.com/vi/7TLk7pscICk/maxresdefault.jpg",
+    "reviews": []
   }
 ]
