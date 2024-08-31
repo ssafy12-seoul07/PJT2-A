@@ -15,7 +15,7 @@
 
     video {
         object-position: center;
-        object-fit: cover; /* background-size: cover 와 비슷함. (HTML 요소 or 비디오와 작동) */
+        object-fit: cover; 
     }
 }
 
@@ -31,19 +31,131 @@
     justify-content: center;
     align-items: flex-start;
     color: white;
-    h3 {
-        font-size: 2.5em;
-        font-weight: bold;
-        margin-bottom: 0.3em;
-    }
-    p {
-        width: 60%;
-        font-size: 1.2em;
-        line-height: 1.6em;
+}
+
+.overlay h3 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.overlay p {
+    width: 60%;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    background-color: #f8f9fa;
+    width:100%;
+}
+
+.navbar-brand img {
+    max-height: 5em; 
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #000;
+}
+
+.navbar-nav .nav-link i {
+    margin-right: 0.5rem;
+}
+
+
+/* 추가된 스타일 */
+.most-viewed,
+.part-category {
+    margin: 10rem 0;
+    text-align: center;
+    h2 {
+        padding-bottom: 2em;
+        font-size: 1.5em;
     }
 }
 
-main.register-page,
+.video-slider-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.video-slider,
+.video-category {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+}
+
+.video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18.75rem; /* 300px 대신 rem 사용 */
+    margin: 0 0.3125rem; /* 5px 대신 rem 사용 */
+}
+
+.video-item img {
+    width: 100%;
+    border-radius: 0.625rem; /* 10px 대신 rem 사용 */
+}
+
+.video-item p {
+    text-align: center;
+    margin: 0.625rem 0 0; /* 10px 대신 rem 사용 */
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: lightgray;
+    z-index: 1; 
+}
+
+.arrow.left {
+    margin-right: 0.65rem; 
+}
+
+.arrow.right {
+    margin-left: 0.65rem; 
+}
+
+.dropdown {
+    margin-bottom: 1.5rem; 
+}
+
+.video-info {
+    font-size: 0.9rem; 
+    color: #666;
+    text-align: center;
+    margin-top: 0.35rem; 
+}
+
+.video-info .category,
+.video-info .channel {
+    display: block;
+    margin-top: 0.35rem; 
+/* main.register-page,
 main.login-page {
     display: flex;
     .form-container {
@@ -92,7 +204,6 @@ main.login-page {
             width: 40vw;
             max-height: 100%;
             height: calc(100vh - 4em);
-            /* height: 100%; */
             object-fit: cover;
             object-position: center;
         }
@@ -100,5 +211,5 @@ main.login-page {
         @media (max-width: 1000px) {
             display: none;
         }
-    }
+    } */
 }
