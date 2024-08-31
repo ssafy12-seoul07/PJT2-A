@@ -110,6 +110,15 @@ const setPlayer = async (id) => {
 
 export { setPlayer };
 
+// sets video player
+const url = new URL(window.location.href);
+const videoId = url.searchParams.get("id");
+
+if (videoId) {
+  setPlayer(videoId);
+} else {
+  console.error("No video ID provided");
+}
 // 스타일 테스트를 위한 부분.
 // 사용 시에는 import { setPlayer } from "상대경로" 로 임포트 후 setPlayer(id) 로 사용
-setPlayer("gMaB-fG4u4g");
+// setPlayer("gMaB-fG4u4g");
