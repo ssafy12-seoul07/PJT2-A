@@ -73,10 +73,54 @@
         </div>
       </nav>
     </header>
-    <main>
-      <h1>로그인</h1>
-      <div style="width: 100px; height: 100px; background-color: blue"></div>
-      <div style="width: 100px; height: 100px; background-color: black"></div>
+    <main class="login-page">
+      <div class="banner-img-container">
+        <img src="./assets/img/ssafit-img2.png" alt="ssafit-img" />
+      </div>
+      <div class="form-container">
+        <div>
+          <div class="title-container">
+            <h1>Welcome back!</h1>
+          </div>
+          <form class="needs-validation is-validated">
+            <div class="row mb-3">
+              <div class="input-group">
+                <span class="input-group-text"
+                  ><i class="fa-regular fa-id-badge"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="userId"
+                  required
+                  placeholder="아이디"
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="input-group">
+                <span class="input-group-text"
+                  ><i class="fa-solid fa-key"></i
+                ></span>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  aria-describedby="passwordHelp"
+                  required
+                  placeholder="비밀번호"
+                />
+                <div id="passwordHelp" class="invalid-feedback">
+                  비밀번호는 최소 4자 ~ 최대 10자여야 합니다.
+                </div>
+              </div>
+            </div>
+            <div class="btn-container d-flex flex-row-reverse">
+              <button type="submit" class="btn btn-primary">로그인</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
