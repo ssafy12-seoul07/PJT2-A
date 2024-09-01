@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 .bgVideo {
     position: relative;
     top: 0;
@@ -98,24 +99,25 @@ header {
     display: flex;
     overflow: hidden;
     width: 80%;
+    justify-content: center;
 }
 
 .video-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 18.75rem; /* 300px 대신 rem 사용 */
-    margin: 0 0.3125rem; /* 5px 대신 rem 사용 */
+    width: 19rem; 
+    margin: 0 0.3rem; 
 }
 
 .video-item img {
     width: 100%;
-    border-radius: 0.625rem; /* 10px 대신 rem 사용 */
+    border-radius: 0.65rem; 
 }
 
 .video-item p {
     text-align: center;
-    margin: 0.625rem 0 0; /* 10px 대신 rem 사용 */
+    margin: 0.6rem 0 0; 
     font-size: 1rem;
     overflow: hidden;
     text-overflow: ellipsis;
