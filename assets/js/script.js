@@ -2,30 +2,49 @@ let currentSlideMostViewed = 0;
 let currentSlidePartCategory = 0;
 export let videoData = [];
 
-fetch("./data/video.json")
-  .then((response) => response.json())
-  .then((data) => {
-    videoData = data;
-    localStorage.setItem("Data", JSON.stringify(data));
+// 로컬 스토리지에서 데이터를 가져오거나 초기화하는 함수
+function initializeVideoData() {
+  let storedVideos = localStorage.getItem("videos");
+  if (storedVideos) {
+    videoData = JSON.parse(storedVideos);
     loadMostViewedVideos();
     filterVideosByPart("전신");
-    setInterval(loadMostViewedVideos, 3000);
-  })
-  .catch((error) => console.error("Error loading video data:", error));
+  } else {
+    // 로컬 스토리지에 데이터가 없으면 JSON 파일에서 가져와 초기화
+    fetch("./data/video.json")
+      .then((response) => response.json())
+      .then((data) => {
+        videoData = data.map((video) => ({ ...video, views: 0 }));
+        localStorage.setItem("videos", JSON.stringify(videoData));
+        loadMostViewedVideos();
+        filterVideosByPart("전신");
+      })
+      .catch((error) => console.error("Error loading video data:", error));
+  }
+}
+
+// 초기화 함수 호출
+initializeVideoData();
+
+// 3초마다 최다 조회 비디오 업데이트 (기존 코드에서 이동)
+setInterval(loadMostViewedVideos, 3000);
 
 //조회수
 function getViews(videoId) {
-  return parseInt(localStorage.getItem(videoId)) || 0;
+  const video = videoData.find((v) => v.id === videoId);
+  return video ? video.views : 0;
 }
 
 function incrementViews(videoId) {
-  let views = getViews(videoId);
-  views += 1;
-  localStorage.setItem(videoId, views);
+  const video = videoData.find((v) => v.id === videoId);
+  if (video) {
+    video.views += 1;
+    localStorage.setItem("videos", JSON.stringify(videoData));
+  }
 }
 
 function sortVideosByViews(videos) {
-  return videos.sort((a, b) => getViews(b.id) - getViews(a.id));
+  return [...videos].sort((a, b) => b.views - a.views);
 }
 
 function loadMostViewedVideos() {
@@ -137,6 +156,10 @@ function slideMostViewed(direction) {
 
   loadMostViewedVideos();
 }
+
+window.filterVideosByPart = filterVideosByPart;
+window.slideMostViewed = slideMostViewed;
+window.slidePartCategory = slidePartCategory;
 
 document.addEventListener("DOMContentLoaded", function () {
   // DOM 요소 선택
