@@ -24,7 +24,7 @@ const setVideoSection = (id) => {
 };
 const setInfoSection = (data) => {
   const section = element("section", { class: "info-section" });
-  const videoInfo = element("div", { class: "video-info" });
+  const videoInfo = element("div", { class: "player-video-info" });
   const infoDiv = element("div", { class: "infoDiv" });
   const title = element("h2", { class: "video-title" }, data.title);
   const uploader = element(
@@ -44,6 +44,7 @@ const setInfoSection = (data) => {
   section.append(videoInfo);
   return section;
 };
+
 const setReviewSection = (data) => {
   const reviewSection = element("section", { class: "review-section" });
   const inputSection = element("div", { class: "review-input-section" });
