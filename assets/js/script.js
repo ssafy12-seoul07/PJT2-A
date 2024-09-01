@@ -1,16 +1,17 @@
 let currentSlideMostViewed = 0;
 let currentSlidePartCategory = 0;
-let videoData = [];
+export let videoData = [];
 
-fetch('./data/video.json')
-  .then(response => response.json())
-  .then(data => {
+fetch("./data/video.json")
+  .then((response) => response.json())
+  .then((data) => {
     videoData = data;
+    localStorage.setItem("Data", JSON.stringify(data));
     loadMostViewedVideos();
-    filterVideosByPart('전신'); 
+    filterVideosByPart("전신");
     setInterval(loadMostViewedVideos, 3000);
   })
-  .catch(error => console.error('Error loading video data:', error));
+  .catch((error) => console.error("Error loading video data:", error));
 
 //조회수
 function getViews(videoId) {
@@ -23,11 +24,9 @@ function incrementViews(videoId) {
   localStorage.setItem(videoId, views);
 }
 
-
 function sortVideosByViews(videos) {
   return videos.sort((a, b) => getViews(b.id) - getViews(a.id));
 }
-
 
 function loadMostViewedVideos() {
   const slider = document.getElementById("videos-most-viewed");
@@ -35,7 +34,11 @@ function loadMostViewedVideos() {
 
   slider.innerHTML = ""; // 슬라이더 초기화
 
-  for (let i = currentSlideMostViewed * 3; i < (currentSlideMostViewed + 1) * 3 && i < sortedVideos.length; i++) {
+  for (
+    let i = currentSlideMostViewed * 3;
+    i < (currentSlideMostViewed + 1) * 3 && i < sortedVideos.length;
+    i++
+  ) {
     const video = sortedVideos[i];
     slider.innerHTML += `
       <div class="video-item">
@@ -57,24 +60,26 @@ function loadMostViewedVideos() {
   }
 }
 
-
 function filterVideosByPart(part) {
-  const dropdownButton = document.getElementById('partDropdown');
-  dropdownButton.textContent = part; 
+  const dropdownButton = document.getElementById("partDropdown");
+  dropdownButton.textContent = part;
 
-  const categoryDiv = document.getElementById('video-category');
-  const filteredVideos = videoData.filter(video => video.part === part);
+  const categoryDiv = document.getElementById("video-category");
+  const filteredVideos = videoData.filter((video) => video.part === part);
 
-  categoryDiv.innerHTML = ''; 
-  displayPartVideos(filteredVideos); 
+  categoryDiv.innerHTML = "";
+  displayPartVideos(filteredVideos);
 }
 
-
 function displayPartVideos(videos) {
-  const categoryDiv = document.getElementById('video-category');
-  categoryDiv.innerHTML = '';
+  const categoryDiv = document.getElementById("video-category");
+  categoryDiv.innerHTML = "";
 
-  for (let i = currentSlidePartCategory * 3; i < (currentSlidePartCategory + 1) * 3; i++) {
+  for (
+    let i = currentSlidePartCategory * 3;
+    i < (currentSlidePartCategory + 1) * 3;
+    i++
+  ) {
     const index = i % videos.length; // 영상이 끝까지 도달하면 다시 첫 영상부터 시작
     const video = videos[index];
     categoryDiv.innerHTML += `
@@ -92,9 +97,11 @@ function displayPartVideos(videos) {
   }
 }
 
-
 function slidePartCategory(direction) {
-  const filteredVideos = videoData.filter(video => video.part === document.getElementById('partDropdown').textContent.trim());
+  const filteredVideos = videoData.filter(
+    (video) =>
+      video.part === document.getElementById("partDropdown").textContent.trim()
+  );
   const totalVideos = filteredVideos.length;
   const maxSlides = Math.ceil(totalVideos / 3);
 
@@ -103,9 +110,8 @@ function slidePartCategory(direction) {
   if (currentSlidePartCategory < 0) currentSlidePartCategory = maxSlides - 1;
   if (currentSlidePartCategory >= maxSlides) currentSlidePartCategory = 0;
 
-  displayPartVideos(filteredVideos); 
+  displayPartVideos(filteredVideos);
 }
-
 
 function slideMostViewed(direction) {
   const sortedVideos = sortVideosByViews(videoData);
@@ -171,3 +177,4 @@ function slideMostViewed(direction) {
 //   // 페이지 로드 시 초기 상태 설정
 //   updateAuthItems();
 // });
+

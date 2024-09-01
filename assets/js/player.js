@@ -1,9 +1,18 @@
+import { videoData } from "./script.js";
+
 // 엘리먼트 생성과 속성 할당을 위한 메서드
 const element = (tag, attributes = {}, textContent = "") => {
   const element = document.createElement(tag);
   Object.entries(attributes).forEach(([k, v]) => element.setAttribute(k, v));
   if (textContent) element.textContent = textContent;
   return element;
+};
+
+const getVideoInfo = async (videoId) => {
+  const videoInfo = videoData.find((video) => video.id === videoId);
+  if (videoInfo) {
+    return videoInfo;
+  }
 };
 
 // video iframe을 fragment에 추가하기 위한 메서드
@@ -63,6 +72,15 @@ const setReviewSection = (data) => {
   input.addEventListener("input", function () {
     button.disabled = input.value.trim() === "";
   });
+  button.addEventListener("click", () => {
+    const reviewContent = input.value.trim();
+    if (reviewContent !== "") {
+      addNewReview(data.id, reviewContent);
+      input.value = "";
+      button.disabled = true;
+    }
+  });
+
   button.appendChild(element("i", { class: "fa-solid fa-arrow-right" }));
   inputSection.append(userImage, input);
 
@@ -95,11 +113,29 @@ const setReviewSection = (data) => {
   return reviewSection;
 };
 
-const setPlayer = async (id) => {
-  const response = await fetch("../../data/video.json");
-  const data = await response.json();
-  const videoInfo = data.find((object) => object.id === id);
+const addNewReview = (videoId, value) => {
+  const reviewContent = value.trim();
+  if (reviewContent !== "") {
+    const reviewTime = new Date();
+    const reviewTimeFormat = reviewTime.toLocaleString();
+    const newReview = {
+      userName: localStorage.getItem("loginUser")
+        ? `${localStorage.getItem("loginUser.name")} `
+        : "비회원",
+      commentTime: reviewTimeFormat,
+      review: reviewContent,
+    };
+    let videoData = JSON.parse(localStorage.getItem("Data"));
+    const videoIndex = videoData.findIndex((video) => video.id === videoId);
 
+    if (videoIndex !== -1) {
+      videoData[videoIndex].reviews.push(newReview);
+      localStorage.setItem("Data", JSON.stringify(videoData));
+    }
+  }
+};
+
+const setPlayer = async (videoInfo) => {
   const section = element("section", { class: "player-wrapper" });
   section.append(
     setVideoSection(videoInfo.id),
@@ -107,19 +143,34 @@ const setPlayer = async (id) => {
     setReviewSection(videoInfo)
   );
   document.getElementById("player").appendChild(section);
+
+  window.addEventListener("storage", (e) => {
+    if (e.key === "Data") {
+      updatePlayerInfo(videoId);
+    }
+  });
 };
 
-export { setPlayer };
+const updatePlayerInfo = async (videoId) => {
+  const updatedVideoInfo = await getVideoInfo(videoId);
+  if (!updatedVideoInfo) {
+    return;
+  }
+
+  const reviewSection = document.querySelector(".review-section");
+  if (reviewSection) {
+    const newReviewSection = setReviewSection(updatedVideoInfo);
+    reviewSection.replaceWith(newReviewSection);
+  }
+};
 
 // sets video player
 const url = new URL(window.location.href);
 const videoId = url.searchParams.get("id");
 
 if (videoId) {
-  setPlayer(videoId);
+  const videoInfo = await getVideoInfo(videoId);
+  setPlayer(videoInfo);
 } else {
   console.error("No video ID provided");
 }
-// 스타일 테스트를 위한 부분.
-// 사용 시에는 import { setPlayer } from "상대경로" 로 임포트 후 setPlayer(id) 로 사용
-// setPlayer("gMaB-fG4u4g");

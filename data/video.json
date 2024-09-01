@@ -6,7 +6,8 @@
     "channelName": "힘으뜸",
     "url": "https://www.youtube.com/watch?v=50WCSpZtdmA",
     "thumbnail": "https://img.youtube.com/vi/50WCSpZtdmA/maxresdefault.jpg",
-    "reviews": []
+    "reviews": [],
+    "views": 0
   },
   {
     "id": "Kk7TQGqQ3nA",
@@ -15,7 +16,8 @@
     "channelName": "빵느",
     "url": "https://www.youtube.com/watch?v=Kk7TQGqQ3nA",
     "thumbnail": "https://img.youtube.com/vi/Kk7TQGqQ3nA/maxresdefault.jpg",
-    "reviews": []
+    "reviews": [],
+    "views": 0
   },
   {
     "id": "MTU4iCDntjs",
@@ -24,7 +26,8 @@
     "channelName": "Allblanc TV",
     "url": "https://www.youtube.com/watch?v=MTU4iCDntjs",
     "thumbnail": "https://img.youtube.com/vi/MTU4iCDntjs/maxresdefault.jpg",
-    "reviews": []
+    "reviews": [],
+    "views": 0
   },
 
   {
@@ -34,8 +37,10 @@
     "channelName": "Mindful Yoga with Eileen",
     "url": "https://www.youtube.com/watch?v=D3yExRi7EME&t=791s",
     "thumbnail": "https://img.youtube.com/vi/D3yExRi7EME&t=791s/maxresdefault.jpg",
-    "reviews": []
+    "reviews": [],
+    "views": 0
   },
+
   {
     "id": "02K-k6daPb4",
     "title": "15 MIN Fat Burning Cardio - 서서하는 유산소 - 다이어트 운동",
@@ -49,7 +54,8 @@
         "commentTime": "2023-07-11",
         "review": "유산소하지마세요체질이란게바뀝니다예를들어초식공룡과육식공룡이있는데육식공룡처럼힘쎄지고싶으면웨이트하고초식공룡처럼약해지고싶으면유산소하"
       }
-    ]
+    ],
+    "views": 0
   },
   {
     "id": "gMaB-fG4u4g",
@@ -59,14 +65,15 @@
     "url": "https://www.youtube.com/embed/gMaB-fG4u4g",
     "thumbnail": "https://img.youtube.com/vi/gMaB-fG4u4g/maxresdefault.jpg",
     "reviews": [
-      { "userName": "맵찔이", "review": "이집 매운맛 잘하네" },
+      { "userName": "맵찔이", "review": "이집 매운맛 잘하네", "views": 0 },
       {
         "userName": "test",
         "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 
         "commentTime": "2018-12-24"
       }
-    ]
+    ],
+    "views": 0
   },
   {
     "id": "swRNeYw1JkY",
@@ -81,7 +88,8 @@
         "review": "뭐야 내 칼로리 돌려줘요",
         "commentTime": "2024-08-01"
       }
-    ]
+    ],
+    "views": 0
   },
   {
     "id": "54tTYO-vU2E",
@@ -90,7 +98,8 @@
     "channelName": "ThankyouBUBU",
     "url": "https://www.youtube.com/embed/54tTYO-vU2E",
     "thumbnail": "https://img.youtube.com/vi/54tTYO-vU2E/maxresdefault.jpg",
-    "reviews": []
+    "reviews": [],
+    "views": 0
   },
   {
     "id": "QqqZH3j_vH0",
@@ -99,7 +108,8 @@
     "channelName": "ThankyouBUBU",
     "url": "https://www.youtube.com/embed/QqqZH3j_vH0",
     "thumbnail": "https://img.youtube.com/vi/QqqZH3j_vH0/maxresdefault.jpg",
-    "reviews": []
+    "reviews": [],
+    "views": 0
   },
   {
     "id": "tzN6ypk6Sps",
@@ -108,7 +118,8 @@
     "channelName": "김강민",
     "url": "https://www.youtube.com/embed/tzN6ypk6Sps",
     "thumbnail": "https://img.youtube.com/vi/tzN6ypk6Sps/maxresdefault.jpg",
-    "reviews": []
+    "reviews": [],
+    "views": 0
   },
   {
     "id": "u5OgcZdNbMo",
@@ -117,7 +128,8 @@
     "channelName": "GYM종국",
     "url": "https://www.youtube.com/embed/u5OgcZdNbMo",
     "thumbnail": "https://img.youtube.com/vi/u5OgcZdNbMo/maxresdefault.jpg",
-    "reviews": []
+    "reviews": [],
+    "views": 0
   },
   {
     "id": "PjGcOP-TQPE",
@@ -126,7 +138,8 @@
     "channelName": "ThankyouBUBU",
     "url": "https://www.youtube.com/embed/PjGcOP-TQPE",
     "thumbnail": "https://img.youtube.com/vi/PjGcOP-TQPE/maxresdefault.jpg",
-    "reviews": []
+    "reviews": [],
+    "views": 0
   },
   {
     "id": "7TLk7pscICk",
@@ -135,6 +148,7 @@
     "channelName": "SomiFit",
     "url": "https://www.youtube.com/embed/7TLk7pscICk",
     "thumbnail": "https://img.youtube.com/vi/7TLk7pscICk/maxresdefault.jpg",
-    "reviews": []
+    "reviews": [],
+    "views": 0
   }
 ]
