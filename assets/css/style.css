@@ -15,7 +15,7 @@
 
     video {
         object-position: center;
-        object-fit: cover; 
+        object-fit: cover;
     }
 }
 
@@ -45,7 +45,6 @@
     line-height: 1.6em;
 }
 
-
 body {
     margin: 0;
     padding: 0;
@@ -54,14 +53,13 @@ body {
     flex-direction: column;
 }
 
-
 header {
     background-color: #f8f9fa;
-    width:100%;
+    width: 100%;
 }
 
 .navbar-brand img {
-    max-height: 5em; 
+    max-height: 5em;
 }
 
 .navbar-nav .nav-link {
@@ -73,7 +71,6 @@ header {
 .navbar-nav .nav-link i {
     margin-right: 0.5rem;
 }
-
 
 /* 추가된 스타일 */
 .most-viewed,
@@ -129,33 +126,35 @@ header {
     background: none;
     border: none;
     color: lightgray;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .arrow.left {
-    margin-right: 0.65rem; 
+    margin-right: 0.65rem;
 }
 
 .arrow.right {
-    margin-left: 0.65rem; 
+    margin-left: 0.65rem;
 }
 
 .dropdown {
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1.5rem;
 }
 
 .video-info {
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
     color: #666;
     text-align: center;
-    margin-top: 0.35rem; 
+    margin-top: 0.35rem;
 }
 
 .video-info .category,
 .video-info .channel {
     display: block;
-    margin-top: 0.35rem; 
-/* main.register-page,
+    margin-top: 0.35rem;
+}
+
+main.register-page,
 main.login-page {
     display: flex;
     .form-container {
@@ -173,13 +172,12 @@ main.login-page {
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
-                margin-bottom: 2em;
+                margin-bottom: 1em;
                 img {
-                    width: 5em;
-                    margin-bottom: 1em;
+                    width: 4em;
                 }
                 h1 {
-                    font-size: 3em;
+                    font-size: 2.5em;
                     padding-left: 0.4em;
                 }
             }
@@ -211,5 +209,5 @@ main.login-page {
         @media (max-width: 1000px) {
             display: none;
         }
-    } */
+    }
 }
