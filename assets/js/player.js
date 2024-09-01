@@ -1,4 +1,5 @@
-import { videoData } from "./script.js";
+// videoData를 로컬 스토리지에서 가져오고 JSON 파싱
+const videoData = JSON.parse(localStorage.getItem("videos")) || [];
 
 // 엘리먼트 생성과 속성 할당을 위한 메서드
 const element = (tag, attributes = {}, textContent = "") => {
@@ -8,11 +9,13 @@ const element = (tag, attributes = {}, textContent = "") => {
   return element;
 };
 
-const getVideoInfo = async (videoId) => {
-  const videoInfo = videoData.find((video) => video.id === videoId);
-  if (videoInfo) {
-    return videoInfo;
+// getVideoInfo 함수 수정
+const getVideoInfo = (videoId) => {
+  if (!Array.isArray(videoData)) {
+    console.error("videoData is not an array:", videoData);
+    return null;
   }
+  return videoData.find((video) => video.id === videoId);
 };
 
 // video iframe을 fragment에 추가하기 위한 메서드
@@ -120,23 +123,37 @@ const addNewReview = (videoId, value) => {
     const reviewTimeFormat = reviewTime.toLocaleString();
     const newReview = {
       userName: localStorage.getItem("loginUser")
-        ? `${localStorage.getItem("loginUser.name")} `
+        ? `${JSON.parse(localStorage.getItem("loginUser")).name} `
         : "비회원",
       commentTime: reviewTimeFormat,
       review: reviewContent,
     };
-    let videoData = JSON.parse(localStorage.getItem("Data"));
     const videoIndex = videoData.findIndex((video) => video.id === videoId);
 
     if (videoIndex !== -1) {
-      videoData[videoIndex].reviews.push(newReview);
-      localStorage.setItem("Data", JSON.stringify(videoData));
+      videoData[videoIndex].reviews.unshift(newReview);
+      localStorage.setItem("videos", JSON.stringify(videoData));
+
+      // sets video player
+      const url = new URL(window.location.href);
+      const videoId = url.searchParams.get("id");
+
+      if (videoId) {
+        const videoInfo = getVideoInfo(videoId);
+        setPlayer(videoInfo);
+      } else {
+        console.error("No video ID provided");
+      }
     }
   }
 };
 
 const setPlayer = async (videoInfo) => {
+  document.getElementById("player").innerHTML = "";
+
   const section = element("section", { class: "player-wrapper" });
+  section.innerHTML = "";
+
   section.append(
     setVideoSection(videoInfo.id),
     setInfoSection(videoInfo),
@@ -145,14 +162,14 @@ const setPlayer = async (videoInfo) => {
   document.getElementById("player").appendChild(section);
 
   window.addEventListener("storage", (e) => {
-    if (e.key === "Data") {
+    if (e.key === "videos") {
       updatePlayerInfo(videoId);
     }
   });
 };
 
 const updatePlayerInfo = async (videoId) => {
-  const updatedVideoInfo = await getVideoInfo(videoId);
+  const updatedVideoInfo = getVideoInfo(videoId);
   if (!updatedVideoInfo) {
     return;
   }
@@ -169,7 +186,7 @@ const url = new URL(window.location.href);
 const videoId = url.searchParams.get("id");
 
 if (videoId) {
-  const videoInfo = await getVideoInfo(videoId);
+  const videoInfo = getVideoInfo(videoId);
   setPlayer(videoInfo);
 } else {
   console.error("No video ID provided");
